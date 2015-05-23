@@ -13,16 +13,16 @@
 	</classpathentry>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JSF 2.2 (Mojarra 2.2.0)">
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/JSF 2.2 (Mojarra 2.2.0)">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 			<attribute name="owner.project.facets" value="jst.jsf"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Radek/Desktop/jar/jsf-facelets-1.1.14.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Radek/Desktop/jar/jsf-impl-2.0.4-b09.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Radek/Desktop/jar/jstl-1.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Radek/Desktop/primefaces-5.2.jar">
+	<classpathentry kind="lib" path="C:/Users/Radek/git/jsf/jsf/Web/WEB-INF/lib/jsf-facelets-1.1.14.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Radek/git/jsf/jsf/Web/WEB-INF/lib/jsf-impl-2.0.4-b09.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Radek/git/jsf/jsf/Web/WEB-INF/lib/jstl-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Radek/git/jsf/jsf/Web/WEB-INF/lib/primefaces-5.0.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
