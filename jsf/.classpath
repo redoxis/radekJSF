@@ -22,6 +22,10 @@
 	<classpathentry kind="lib" path="C:/Users/Radek/Desktop/jar/jsf-facelets-1.1.14.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Radek/Desktop/jar/jsf-impl-2.0.4-b09.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Radek/Desktop/jar/jstl-1.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Radek/Desktop/primefaces-5.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Radek/Desktop/primefaces-5.2.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
