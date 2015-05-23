@@ -12,6 +12,59 @@
 
 
 
+
+
+<center>
+<h:form>
+
+<br/>
+    <h:panelGrid columns="2" cellpadding="8">
+    
+    
+        <h:outputLabel for="imie" value="Imie:" style="font-weight:bold" />
+        <p:inputText id="imie" value="#{Person.imie}" />
+        
+               
+        <h:outputLabel for="nazwisko" value="Nazwisko:" style="font-weight:bold" />
+        <p:inputText id="nazwisko" value="#{Person.nazwisko}" />
+        
+              
+        <h:outputLabel for="pesel" value="Pesel:" style="font-weight:bold" />
+        <p:inputText id="pesel" value="#{Person.pesel}" />
+               
+                
+        <h:outputLabel for="data" value="Data urodzenia:" style="font-weight:bold" />
+        <p:inputText id="data" value="#{Person.dataUrodzenia}" />   
+        
+               
+        <h:outputLabel for="adres" value="Adres:" style="font-weight:bold" />
+        <p:inputText id="adres" value="#{Person.adres}" />   
+        
+               
+        <h:outputLabel for="telefon" value="Telefon:" style="font-weight:bold" />
+        <p:inputText id="telefon" value="#{Person.telefon}" />   
+               
+        
+        <h:outputLabel for="waga" value="Waga:" style="font-weight:bold" />
+        <p:inputText id="waga" value="#{Person.waga}" />   
+        
+        
+        <h:outputLabel for="wzrost" value="Wzrost:" style="font-weight:bold" />
+        <p:inputText id="wzrost" value="#{Person.wzrost}" />          
+        
+                
+        <p:commandButton value="Dodaj pacjenta" icon="ui-icon-check" />
+       
+        
+        
+     
+        
+    </h:panelGrid>
+    
+    
+</h:form>
+
+</center>
  
 
 

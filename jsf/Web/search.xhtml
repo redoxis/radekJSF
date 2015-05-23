@@ -9,9 +9,64 @@
  <ui:include src="default.xhtml"/>
 		</h:head>  
  <h:body> 
+ 
+ 
+ <br/>
+ 
+ 
+ <h:form>
+    <h:panelGrid columns="4" cellpadding="5">
+       
+        <p:inputText id="name" value="#{basicView.text}" />
+        <p:commandButton value="Szukaj" />
+        
+    </h:panelGrid>
+</h:form>
+ 
+ 
+ 
+ 
+<br/>
+
+<br/>
+
+<p:dataTable var="Pacjent" value="test">
 
 
-
+    <p:column headerText="Imie">
+        <h:outputText value="test" />
+    </p:column>
+ 
+    <p:column headerText="Nazwisko">
+        <h:outputText value="test" />
+    </p:column>
+ 
+    <p:column headerText="Pesel">
+        <h:outputText value="test" />
+    </p:column>
+ 
+    <p:column headerText="Data urodzenia">
+        <h:outputText value="test" />
+    </p:column>
+    
+    <p:column headerText="Adres">
+        <h:outputText value="test" />
+    </p:column>
+    
+    <p:column headerText="Telefon">
+        <h:outputText value="test" />
+    </p:column>
+    
+    <p:column headerText="Waga">
+        <h:outputText value="test" />
+    </p:column>
+    
+    <p:column headerText="Wzrost">
+        <h:outputText value="test" />
+    </p:column>
+    
+    
+</p:dataTable>
  
 
 
