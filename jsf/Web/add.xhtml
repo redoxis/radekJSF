@@ -3,65 +3,85 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      	xmlns:rich="http://richfaces.org/rich"
+      	xmlns:a4j="http://richfaces.org/a4j">
  
  		<h:head>
- <ui:include src="default.xhtml"/>
+
 		</h:head>  
  <h:body> 
 
-
+ <ui:include src="default.xhtml"/>
 
 
 
 <center>
 <h:form>
-
+<rich:panel header="Dodawanie pacjenta" id="panel">
 <br/>
-    <h:panelGrid columns="2" cellpadding="8">
-    
+
+<p:messages id="msgs" />
+
+    <h:panelGrid columns="3" cellpadding="5">
+    	
+    	
     
         <h:outputLabel for="imie" value="Imie:" style="font-weight:bold" />
-        <p:inputText id="imie" value="#{Person.imie}" />
+        <p:inputText id="imie" value="#{Person.imie}" required="true" label="imie" >
+        <f:validateLength minimum="2" maximum="50"  />
+        </p:inputText>
+        <p:message for="imie" display="icon" />
         
-               
         <h:outputLabel for="nazwisko" value="Nazwisko:" style="font-weight:bold" />
-        <p:inputText id="nazwisko" value="#{Person.nazwisko}" />
+        <p:inputText id="nazwisko" value="#{Person.nazwisko}" required="true" label="nazwisko" >
+        <f:validateLength minimum="2" maximum="50"  />
+        </p:inputText>
+        <p:message for="nazwisko" display="icon" />
         
               
         <h:outputLabel for="pesel" value="Pesel:" style="font-weight:bold" />
-        <p:inputText id="pesel" value="#{Person.pesel}" />
+        <p:inputText id="pesel" value="#{Person.pesel}" /> <h:outputLabel></h:outputLabel>
                
                 
         <h:outputLabel for="data" value="Data urodzenia:" style="font-weight:bold" />
-        <p:inputText id="data" value="#{Person.dataUrodzenia}" />   
+        <p:inputText id="data" value="#{Person.dataUrodzenia}" />    <h:outputLabel></h:outputLabel>
         
-               
         <h:outputLabel for="adres" value="Adres:" style="font-weight:bold" />
-        <p:inputText id="adres" value="#{Person.adres}" />   
+        <p:inputText id="adres" value="#{Person.adres}" required="true" label="adres" >
+        <f:validateLength minimum="1"  />
+        </p:inputText>
+        <p:message for="adres" display="icon" />
         
-               
+
         <h:outputLabel for="telefon" value="Telefon:" style="font-weight:bold" />
-        <p:inputText id="telefon" value="#{Person.telefon}" />   
+        <p:inputText  id="telefon" value="#{Person.tel}" label="telefon">
+        <f:validateLength minimum="9" maximum="9" />
+         <f:convertNumber integerOnly="true" type="number" />
+        </p:inputText>
+        <p:message for="telefon" display="icon" /> 
+              
+               
+
                
         
         <h:outputLabel for="waga" value="Waga:" style="font-weight:bold" />
-        <p:inputText id="waga" value="#{Person.waga}" />   
+        <p:inputText id="waga" value="#{Person.waga}" />    <h:outputLabel></h:outputLabel>
         
         
         <h:outputLabel for="wzrost" value="Wzrost:" style="font-weight:bold" />
-        <p:inputText id="wzrost" value="#{Person.wzrost}" />          
+        <p:inputText id="wzrost" value="#{Person.wzrost}" />          <h:outputLabel></h:outputLabel>
         
-                
-        <p:commandButton value="Dodaj pacjenta" icon="ui-icon-check" />
-       
+           
+        <p:commandButton value="Dodaj pacjenta" update="panel" actionListener="#{Person.check}" icon="ui-icon-check" />
+       	
         
         
      
         
     </h:panelGrid>
     
-    
+</rich:panel>  
 </h:form>
 
 </center>

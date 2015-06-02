@@ -1,24 +1,47 @@
 package jsf;
 
-import javax.annotation.ManagedBean;
+import java.util.Date;
+
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.RequestScoped;
+import javax.faces.context.FacesContext;
+import javax.faces.bean.ManagedBean;
 
-import sun.util.calendar.LocalGregorianCalendar.Date;
 
-@ManagedBean
+@ManagedBean(name="Person")
 @RequestScoped
-public class Person {
+public class Person
+{
+//	public Person(String imie,String nazwisko,String pesel,Date dataUrodzenia,String adres,int tel,double waga,double wzrost)
+//	{
+//		this.imie=imie;
+//		this.nazwisko=nazwisko;
+//		this.pesel=pesel;
+//		this.dataUrodzenia=dataUrodzenia;
+//		this.adres=adres;
+//		this.tel=tel;
+//		this.waga=waga;
+//		this.wzrost=wzrost;
+//	
+//	}
 	
+	private int id;
+
 	private String imie;
 	private String nazwisko;
-	private long pesel;
+	private String pesel;
 	private Date dataUrodzenia;
 	private String adres;
 	private int tel;
 	private double waga;
 	private double wzrost;
 	
-	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getImie() {
 		return imie;
 	}
@@ -31,10 +54,10 @@ public class Person {
 	public void setNazwisko(String nazwisko) {
 		this.nazwisko = nazwisko;
 	}
-	public long getPesel() {
+	public String getPesel() {
 		return pesel;
 	}
-	public void setPesel(long pesel) {
+	public void setPesel(String pesel) {
 		this.pesel = pesel;
 	}
 	public Date getDataUrodzenia() {
@@ -68,11 +91,27 @@ public class Person {
 		this.wzrost = wzrost;
 	}
 	
-	public String add()
-	{
+	public void check(){
+	
+		if(checkPerson.sprawdz(pesel)) 
+		{
+			
+			this.save();
+				}
+		else
+		{
+			
+			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Chyba nie co nie"));
+	    }
 		
-		return "Tak";
+		
 	}
+	
+	public void save() {
+		PersonManagment.add(this);
+	//	PersonManagment.add(new Person(this.imie,this.nazwisko,this.pesel,this.dataUrodzenia,this.adres,this.tel,this.waga,this.wzrost));
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Pacjent " + imie + " " + nazwisko +" zosta³ pomyœlnie dodany do bazy."));
+    }
 	
 
 }
