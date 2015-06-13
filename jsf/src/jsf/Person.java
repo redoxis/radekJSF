@@ -1,11 +1,19 @@
 package jsf;
 
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
 import javax.faces.bean.ManagedBean;
+import javax.xml.crypto.Data;
+
+import org.primefaces.event.SelectEvent;
+
 
 
 @ManagedBean(name="Person")
@@ -30,12 +38,13 @@ public class Person
 	private String imie;
 	private String nazwisko;
 	private String pesel;
-	private Date dataUrodzenia;
+	private String dataUrodzenia;
 	private String adres;
 	private int tel;
 	private double waga;
 	private double wzrost;
 	
+
 	public int getId() {
 		return id;
 	}
@@ -60,10 +69,11 @@ public class Person
 	public void setPesel(String pesel) {
 		this.pesel = pesel;
 	}
-	public Date getDataUrodzenia() {
+
+	public String getDataUrodzenia() {
 		return dataUrodzenia;
 	}
-	public void setDataUrodzenia(Date dataUrodzenia) {
+	public void setDataUrodzenia(String dataUrodzenia) {
 		this.dataUrodzenia = dataUrodzenia;
 	}
 	public String getAdres() {
@@ -95,18 +105,23 @@ public class Person
 	
 		if(checkPerson.sprawdz(pesel)) 
 		{
-			
+//			 if(checkPerson.sprawdzDate(dataUrodzenia, pesel))
+//				{
 			this.save();
-				}
+//				}
+//			else
+//			{
+				
+//				FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Z≥a data, bπdü niezgodna z nr PESEL"));
+//		    }
+						
+		}
 		else
 		{
-			
-			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Chyba nie co nie"));
-	    }
+						FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("B≥Ídny nr PESEL"));
+		}
 		
-		
-	}
-	
+		}
 	public void save() {
 		PersonManagment.add(this);
 	//	PersonManagment.add(new Person(this.imie,this.nazwisko,this.pesel,this.dataUrodzenia,this.adres,this.tel,this.waga,this.wzrost));

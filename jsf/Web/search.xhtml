@@ -22,6 +22,8 @@
         <p:inputText id="name" value="#{basicView.text}" />
         <p:commandButton value="Szukaj" />
         
+        
+        
     </h:panelGrid>
 </h:form>
  
@@ -32,41 +34,43 @@
 
 <br/>
 
-<p:dataTable var="Pacjent">
+<p:dataTable var="Pacjent" value="#{PersonManagment.persons}">
 
 
-    <p:column headerText="imie">
-        <h:outputText value="test" />
+    <p:column headerText="Imie">
+    <h:outputText value="#{Pacjent.imie}" />
     </p:column>
- 
+    
     <p:column headerText="Nazwisko">
-        <h:outputText value="test" />
+    <h:outputText value="#{Pacjent.nazwisko}" />
     </p:column>
- 
+    
     <p:column headerText="Pesel">
-        <h:outputText value="test" />
+    <h:outputText value="#{Pacjent.pesel}" />
     </p:column>
- 
-    <p:column headerText="Data urodzenia">
-        <h:outputText value="test" />
+    
+    <p:column headerText="Data">
+    <h:outputText value="#{Pacjent.dataUrodzenia}" />
     </p:column>
+    
     
     <p:column headerText="Adres">
-        <h:outputText value="test" />
+    <h:outputText value="#{Pacjent.adres}" />
     </p:column>
     
-    <p:column headerText="Telefon">
-        <h:outputText value="test" />
+        <p:column headerText="Telefon">
+    <h:outputText value="#{Pacjent.tel}" />
     </p:column>
     
     <p:column headerText="Waga">
-        <h:outputText value="test" />
+    <h:outputText value="#{Pacjent.waga}" />
     </p:column>
     
     <p:column headerText="Wzrost">
-        <h:outputText value="test" />
+    <h:outputText value="#{Pacjent.wzrost}" />
     </p:column>
-    
+
+
     
 </p:dataTable>
  

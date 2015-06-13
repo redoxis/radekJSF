@@ -43,10 +43,9 @@
         <h:outputLabel for="pesel" value="Pesel:" style="font-weight:bold" />
         <p:inputText id="pesel" value="#{Person.pesel}" /> <h:outputLabel></h:outputLabel>
                
-                
         <h:outputLabel for="data" value="Data urodzenia:" style="font-weight:bold" />
         <p:inputText id="data" value="#{Person.dataUrodzenia}" />    <h:outputLabel></h:outputLabel>
-        
+         
         <h:outputLabel for="adres" value="Adres:" style="font-weight:bold" />
         <p:inputText id="adres" value="#{Person.adres}" required="true" label="adres" >
         <f:validateLength minimum="1"  />
@@ -76,9 +75,10 @@
         <p:commandButton value="Dodaj pacjenta" update="panel" actionListener="#{Person.check}" icon="ui-icon-check" />
        	
         
-        
-     
-        
+
+            
+            
+            
     </h:panelGrid>
     
 </rich:panel>  
