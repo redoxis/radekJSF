@@ -12,68 +12,48 @@
 		</h:head>  
  <h:body> 
   <ui:include src="default.xhtml"/>
- 
- <br/>
- 
- 
- <h:form>
-    <h:panelGrid columns="4" cellpadding="5">
-       
-        <p:inputText id="name" value="#{basicView.text}" />
-        <p:commandButton value="Szukaj" />
+  
+<h:form id="form"> 
+
+   <p:dataTable var="Pacjent" value="#{PersonManagment.persons}" widgetVar="carsTable"
+                 emptyMessage="No cars found with given criteria" filteredValue="#{dtFilterView.filteredCars}">
+                 
+        <p:column filterBy="#{Pacjent.imie}" headerText="Imie" footerText="." filterMatchMode="contains">
+            <h:outputText value="#{Pacjent.imie}" />
+        </p:column>
         
+        <p:column filterBy="#{Pacjent.nazwisko}" headerText="Nazwisko" footerText="." filterMatchMode="contains">
+            <h:outputText value="#{Pacjent.nazwisko}" />
+        </p:column>
         
+        <p:column filterBy="#{Pacjent.pesel}" headerText="PESEL" footerText="." filterMatchMode="contains">
+            <h:outputText value="#{Pacjent.pesel}" />
+        </p:column>
         
-    </h:panelGrid>
+        <p:column filterBy="#{Pacjent.dataUrodzenia}" headerText="Data urodzenia" footerText="." filterMatchMode="contains">
+            <h:outputText value="#{Pacjent.dataUrodzenia}" />
+        </p:column>
+        
+        <p:column filterBy="#{Pacjent.adres}" headerText="Adres" footerText="." filterMatchMode="contains">
+            <h:outputText value="#{Pacjent.adres}" />
+        </p:column>
+        
+        <p:column filterBy="#{Pacjent.tel}" headerText="Telefon" footerText="." filterMatchMode="contains">
+            <h:outputText value="#{Pacjent.tel}" />
+        </p:column>
+        
+        <p:column filterBy="#{Pacjent.waga}" headerText="Waga" footerText="." filterMatchMode="contains">
+            <h:outputText value="#{Pacjent.waga}" />
+        </p:column>
+        
+        <p:column filterBy="#{Pacjent.wzrost}" headerText="Wzrost" footerText="." filterMatchMode="contains">
+            <h:outputText value="#{Pacjent.wzrost}" />
+        </p:column>
+                 
+    </p:dataTable>
+
 </h:form>
- 
- 
- 
- 
-<br/>
 
-<br/>
-
-<p:dataTable var="Pacjent" value="#{PersonManagment.persons}">
-
-
-    <p:column headerText="Imie">
-    <h:outputText value="#{Pacjent.imie}" />
-    </p:column>
-    
-    <p:column headerText="Nazwisko">
-    <h:outputText value="#{Pacjent.nazwisko}" />
-    </p:column>
-    
-    <p:column headerText="Pesel">
-    <h:outputText value="#{Pacjent.pesel}" />
-    </p:column>
-    
-    <p:column headerText="Data">
-    <h:outputText value="#{Pacjent.dataUrodzenia}" />
-    </p:column>
-    
-    
-    <p:column headerText="Adres">
-    <h:outputText value="#{Pacjent.adres}" />
-    </p:column>
-    
-        <p:column headerText="Telefon">
-    <h:outputText value="#{Pacjent.tel}" />
-    </p:column>
-    
-    <p:column headerText="Waga">
-    <h:outputText value="#{Pacjent.waga}" />
-    </p:column>
-    
-    <p:column headerText="Wzrost">
-    <h:outputText value="#{Pacjent.wzrost}" />
-    </p:column>
-
-
-    
-</p:dataTable>
- 
 
 
  </h:body>    

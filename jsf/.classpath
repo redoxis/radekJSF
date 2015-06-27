@@ -17,10 +17,10 @@
 			<attribute name="owner.project.facets" value="jst.jsf"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Radek/git/jsf/jsf/Web/WEB-INF/lib/jsf-facelets-1.1.14.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Radek/git/jsf/jsf/Web/WEB-INF/lib/jsf-impl-2.0.4-b09.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Radek/git/jsf/jsf/Web/WEB-INF/lib/jstl-1.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Radek/git/jsf/jsf/Web/WEB-INF/lib/primefaces-5.0.jar">
+	<classpathentry kind="lib" path="C:/Users/Radek/git/radekJSF/jsf/Web/WEB-INF/lib/jsf-facelets-1.1.14.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Radek/git/radekJSF/jsf/Web/WEB-INF/lib/jsf-impl-2.0.4-b09.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Radek/git/radekJSF/jsf/Web/WEB-INF/lib/jstl-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Radek/git/radekJSF/jsf/Web/WEB-INF/lib/primefaces-5.0.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
