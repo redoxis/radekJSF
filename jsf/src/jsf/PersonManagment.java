@@ -9,14 +9,16 @@ import java.io.FileInputStream;
 
 import java.io.FileWriter;
 import java.io.IOException;
-
 import java.util.ArrayList;
-
 import java.util.List;
+import java.util.Locale;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
+
+import org.hibernate.Session;
 
 @ManagedBean(name="PersonManagment")
 @ViewScoped
@@ -24,7 +26,10 @@ public class PersonManagment{
 	
 
 	private List<Person> persons;
+
 	
+	public Person per;
+			
 	public List<Person> getPersons() {
 		return persons;
 	}
@@ -50,12 +55,21 @@ public class PersonManagment{
 				// TODO AFuto-generated catch block
 				e.printStackTrace();
 			}
-
 		 
-
+/*
+		
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        
+                
+        session.save(p);
+ 
+        
+        session.getTransaction().commit();
+        HibernateUtil.shutdown();
 		
 	
-		
+		*/
 		
 	}
 	
@@ -105,11 +119,37 @@ public class PersonManagment{
 		} catch (Exception e) {
 
 			e.printStackTrace();
+			
 		}
+		
+		
 		
 	}
 	
 	
-	
+	/*
+	public boolean filterByPrice(Object value, Object filter, Locale locale) {
+        String filterText = (filter == null) ? null : filter.toString().trim();
+        if(filterText == null||filterText.equals("")) {
+            return true;
+        }
+         
+        if(value == null) {
+            return false;
+        }
+         
+        return ((Comparable) value).compareTo(Integer.valueOf(filterText)) > 0;
+    }
 
+	public List<Person> getFiltrPersons() {
+		return FiltrPersons;
+	}
+
+	public void setFiltrPersons(List<Person> filtrPersons) {
+		FiltrPersons = filtrPersons;
+	}
+	
+*/
 }
+
+

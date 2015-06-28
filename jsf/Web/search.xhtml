@@ -13,10 +13,12 @@
  <h:body> 
   <ui:include src="default.xhtml"/>
   
+  
+
 <h:form id="form"> 
 
-   <p:dataTable var="Pacjent" value="#{PersonManagment.persons}" widgetVar="carsTable"
-                 emptyMessage="No cars found with given criteria" filteredValue="#{dtFilterView.filteredCars}">
+   <p:dataTable var="Pacjent" value="#{PersonManagment.persons}" widgetVar="personTable"
+                 emptyMessage="No cars found with given criteria" filteredValue="#{PersonManagment.persons}">
                  
         <p:column filterBy="#{Pacjent.imie}" headerText="Imie" footerText="." filterMatchMode="contains">
             <h:outputText value="#{Pacjent.imie}" />
@@ -56,5 +58,7 @@
 
 
 
+  
+ 
  </h:body>    
 </html>

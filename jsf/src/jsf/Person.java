@@ -1,6 +1,7 @@
 package jsf;
 
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -10,38 +11,54 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
 import javax.faces.bean.ManagedBean;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.xml.crypto.Data;
 
-import org.primefaces.event.SelectEvent;
 
 
 
+
+@Entity
+@Table(name = "java_db")
 @ManagedBean(name="Person")
 @RequestScoped
-public class Person
-{
-//	public Person(String imie,String nazwisko,String pesel,Date dataUrodzenia,String adres,int tel,double waga,double wzrost)
-//	{
-//		this.imie=imie;
-//		this.nazwisko=nazwisko;
-//		this.pesel=pesel;
-//		this.dataUrodzenia=dataUrodzenia;
-//		this.adres=adres;
-//		this.tel=tel;
-//		this.waga=waga;
-//		this.wzrost=wzrost;
-//	
-//	}
-	
+public class Person implements Serializable
+{  
+    private static final long serialVersionUID = -1798070786993154676L;
+
+
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "ID", unique = true, nullable = false)
 	private int id;
 
+	@Column(name = "imie")
 	private String imie;
+	
+	@Column(name = "nazwisko")
 	private String nazwisko;
+	
+	@Column(name = "pesel")
 	private String pesel;
+	
+	@Column(name = "dataUrodzenia")
 	private String dataUrodzenia;
+	
+	@Column(name = "adres")
 	private String adres;
+	
+	@Column(name = "tel")
 	private int tel;
+	
+	@Column(name = "waga")
 	private double waga;
+	
+	@Column(name = "wzrost")
 	private double wzrost;
 	
 
@@ -127,6 +144,10 @@ public class Person
 	//	PersonManagment.add(new Person(this.imie,this.nazwisko,this.pesel,this.dataUrodzenia,this.adres,this.tel,this.waga,this.wzrost));
         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Pacjent " + imie + " " + nazwisko +" zosta³ pomyœlnie dodany do bazy."));
     }
+	
+	public void getPerson() {
+		PersonManagment.getall();
+	}
 	
 
 }

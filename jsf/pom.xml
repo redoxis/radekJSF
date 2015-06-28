@@ -10,10 +10,14 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<org.richfaces.bom.version>4.1.0.Final</org.richfaces.bom.version>
 	</properties>
+	
+	
 
   
 	<dependencyManagement>
 		<dependencies>
+		
+
 			<dependency>
 				<groupId>org.richfaces</groupId>
 				<artifactId>richfaces-bom</artifactId>
@@ -25,7 +29,7 @@
 	</dependencyManagement>
   
     <dependencies>
-    
+    	
     		<dependency>
 			<groupId>org.richfaces.ui</groupId>
 			<artifactId>richfaces-components-ui</artifactId>
@@ -37,6 +41,8 @@
 		
 		
     <dependency>
+    
+    
       <groupId>org.apache.tomcat</groupId>
       <artifactId>tomcat-annotations-api</artifactId>
       <version>8.0.22</version>
