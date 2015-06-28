@@ -10,7 +10,7 @@
  		<h:head>
 
 		</h:head>  
- <h:body> 
+ <h:body style="background-color:#808080"> 
 
  <ui:include src="default.xhtml"/>
 
@@ -18,16 +18,16 @@
 
 <center>
 <h:form>
-<rich:panel header="Dodawanie pacjenta" id="panel" >
+<p:panel header="Dadaj nowego pacjenta" id="panel" style="background-color:#DCDCDC; text-align:center">
 <br/>
 
 <p:messages id="msgs" />
 
-    <h:panelGrid columns="3" cellpadding="5">
+    <h:panelGrid columns="3" cellpadding="5" style="margin-left: auto;margin-right: auto">
     	
+ 
     	
-    
-        <h:outputLabel for="imie" value="Imie:" style="font-weight:bold" />
+        <h:outputLabel for="imie" value="Imie:" style="font-weight:bold"/>
         <p:inputText id="imie" value="#{Person.imie}" required="true" label="imie" >
         <f:validateLength minimum="2" maximum="50"  />
         </p:inputText>
@@ -72,16 +72,17 @@
         <p:inputText id="wzrost" value="#{Person.wzrost}" />          <h:outputLabel></h:outputLabel>
         
            
-        <p:commandButton value="Dodaj pacjenta" update="panel" actionListener="#{Person.check}" icon="ui-icon-check" />
+  
        	
         
 
-            
-            
+          
             
     </h:panelGrid>
     
-</rich:panel>  
+</p:panel>
+<br/>
+      <p:commandButton value="Dodaj pacjenta" update="panel" actionListener="#{Person.check}" icon="ui-icon-check" />
 </h:form>
 
 </center>

@@ -1,6 +1,10 @@
 
      
       .bcg{
-      background-image:url("#{resource['images:background.png']}");
+      background-color:#b0c4de;
       }
      
+     .tlo
+{
+  background-color: #C0C0C0;
+}
